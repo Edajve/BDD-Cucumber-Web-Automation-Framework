@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="17" failures="0" name="web.runner.TestRunner" time="282.556" errors="7" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.16.1+1"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home/lib"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/dajveechols/AutomationDevelopment/web-sportsbook-automation"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/dajveechols/AutomationDevelopment/web-sportsbook-automation"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="11.0.16.1+1"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/h2/ys6hbp7n5gs_h09vwn9p00th0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.8.6/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/dajveechols/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/usr/local/Cellar/maven/3.8.6/libexec/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="12.6"/>
+    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.8.6/libexec/lib/jansi-native"/>
+    <property name="user.home" value="/Users/dajveechols"/>
+    <property name="user.timezone" value="America/Chicago"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="dajveechols"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.8.6/libexec/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="11.0.16.1"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.8.6/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2022-08-12"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="Temurin-11.0.16.1+1"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="Login" name="Log in to sportsbook as valid user" time="14.669"/>
+  <testcase classname="Login" name="User denied due to invalid credentials" time="17.809"/>
+  <testcase classname="Login" name="Suspended user attempts to log in to sportsbook" time="16.927"/>
+  <testcase classname="Login" name="User with deactivated account tries to log in" time="17.762"/>
+  <testcase classname="Logout" name="Validate user can log out of their account" time="16.406"/>
+  <testcase classname="Deposit Limit" name="Verify user is not able deposit past a set daily deposit limit" time="13.675"/>
+  <testcase classname="Deposit Limit" name="Verify user is not able deposit past a set weekly deposit limit" time="24.694"/>
+  <testcase classname="Deposit Limit" name="Verify user is not able deposit past a set monthly deposit limit" time="26.171"/>
+  <testcase classname="Registration" name="Sign up to the sportsbook" time="10.488">
+    <error message="element click intercepted: Element &lt;button class=&quot;AccountArea:Fubo-cta-1 AccountArea:Fubo-ctaRegister-1&quot;&gt;...&lt;/button&gt; is not clickable at point (1640, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f3122097b76a55b67b213ffcd6c6462b, clickElement {id=e9807c0c-eb01-438b-9f95-b8587a15c57d}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58460}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58460/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (f3122097b76a55b67b213ffcd6c6462b)] -&gt; xpath: //*[text()=&apos;Sign Up&apos;]]
+Session ID: f3122097b76a55b67b213ffcd6c6462b" type="org.openqa.selenium.ElementClickInterceptedException">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;AccountArea:Fubo-cta-1 AccountArea:Fubo-ctaRegister-1&quot;&gt;...&lt;/button&gt; is not clickable at point (1640, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f3122097b76a55b67b213ffcd6c6462b, clickElement {id=e9807c0c-eb01-438b-9f95-b8587a15c57d}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58460}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58460/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (f3122097b76a55b67b213ffcd6c6462b)] -&gt; xpath: //*[text()=&apos;Sign Up&apos;]]
+Session ID: f3122097b76a55b67b213ffcd6c6462b
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToSignUpPage(HomePage.java:65)
+	at web.steps.RegistrationSteps.user_signs_up_using_this_information(RegistrationSteps.java:37)
+	at ✽.user signs up using this information(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/registration/Registration.feature:8)
+</error>
+    <system-out>
+@Regression @Smoke
+Scenario: Sign up to the sportsbook                                     # src/test/resources/registration/Registration.feature:7
+  Given user goes to sportsbook homepage                                # web.steps.Environment.userGoesToSportsbookHomepage()
+  Given user signs up using this information                            # web.steps.RegistrationSteps.user_signs_up_using_this_information(io.cucumber.datatable.DataTable)
+    | Email           | Password        | Zip Code |
+    | dechols@fubo.tv | FuboTV#yyyyMMdd | 60677    |
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;AccountArea:Fubo-cta-1 AccountArea:Fubo-ctaRegister-1&quot;&gt;...&lt;/button&gt; is not clickable at point (1640, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f3122097b76a55b67b213ffcd6c6462b, clickElement {id=e9807c0c-eb01-438b-9f95-b8587a15c57d}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58460}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58460/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (f3122097b76a55b67b213ffcd6c6462b)] -&gt; xpath: //*[text()=&apos;Sign Up&apos;]]
+Session ID: f3122097b76a55b67b213ffcd6c6462b
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToSignUpPage(HomePage.java:65)
+	at web.steps.RegistrationSteps.user_signs_up_using_this_information(RegistrationSteps.java:37)
+	at ✽.user signs up using this information(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/registration/Registration.feature:8)
+
+  And completes KYC with this information                               # web.steps.RegistrationSteps.completes_KYC_with_this_information(io.cucumber.datatable.DataTable)
+    | First Name | Last Name  | Date Of Birth | House Number    | Street Name | City      | State    | Zip Code | Phone Number     | SSN           | Strong Auth | Promotion Code |
+    | Test       | Automation | 4/18/1983     | 450 Test Avenue | Test        | Test Park | Illinois | 60677    | Generated Number | Generated SSN | No          | N/A            |
+  Then the user should be registered but not verified to the sportsbook # web.steps.RegistrationSteps.theUserShouldBeRegisteredButNotVerifiedToTheSportsbook()
+</system-out>
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 51251
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 17, 2022 11:57:52 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Oct 17, 2022 11:57:52 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 106, so returning the closest version found: 104
+Oct 17, 2022 11:57:52 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 106 of 104
+</system-err>
+  </testcase>
+  <testcase classname="Registration" name="User under 21 attempts to register to the sportsbook" time="16.518"/>
+  <testcase classname="Wager" name="Verify user is able to place a single bets" time="10.197">
+    <error message="element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [267db9d5119faaedb5c2a426f40b32cb, clickElement {id=56237c2e-cee1-4a16-bc19-af0e3e438050}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58694}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58694/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (267db9d5119faaedb5c2a426f40b32cb)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 267db9d5119faaedb5c2a426f40b32cb" type="org.openqa.selenium.ElementClickInterceptedException">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [267db9d5119faaedb5c2a426f40b32cb, clickElement {id=56237c2e-cee1-4a16-bc19-af0e3e438050}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58694}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58694/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (267db9d5119faaedb5c2a426f40b32cb)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 267db9d5119faaedb5c2a426f40b32cb
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wager/Wager.feature:5)
+</error>
+    <system-out>
+@Regression @Smoke
+Scenario: Verify user is able to place a single bets # src/test/resources/wager/Wager.feature:8
+  Given user goes to sportsbook homepage             # web.steps.Environment.userGoesToSportsbookHomepage()
+  And user logs in with &quot;correct credentials&quot;        # web.steps.LoginSteps.userLogsInWith(java.lang.String)
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [267db9d5119faaedb5c2a426f40b32cb, clickElement {id=56237c2e-cee1-4a16-bc19-af0e3e438050}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58694}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58694/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (267db9d5119faaedb5c2a426f40b32cb)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 267db9d5119faaedb5c2a426f40b32cb
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wager/Wager.feature:5)
+
+  When user places a bet for &quot;8&quot; dollars             # web.steps.WagerSteps.userPlacesABetForDollars(java.lang.String)
+  Then bet should be placed                          # web.steps.WagerSteps.bet_should_be_placed()
+</system-out>
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 57209
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 17, 2022 11:58:19 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Oct 17, 2022 11:58:19 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 106, so returning the closest version found: 104
+Oct 17, 2022 11:58:19 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 106 of 104
+</system-err>
+  </testcase>
+  <testcase classname="Wager" name="Verify user is able to place a multiple bets" time="9.629">
+    <error message="element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [498662701005fe6d7996e97fe2c8af37, clickElement {id=8beeef06-c509-4865-9808-c5e06e88033b}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58810}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58810/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (498662701005fe6d7996e97fe2c8af37)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 498662701005fe6d7996e97fe2c8af37" type="org.openqa.selenium.ElementClickInterceptedException">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [498662701005fe6d7996e97fe2c8af37, clickElement {id=8beeef06-c509-4865-9808-c5e06e88033b}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58810}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58810/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (498662701005fe6d7996e97fe2c8af37)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 498662701005fe6d7996e97fe2c8af37
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wager/Wager.feature:5)
+</error>
+    <system-out>
+@Regression
+Scenario: Verify user is able to place a multiple bets # src/test/resources/wager/Wager.feature:13
+  Given user goes to sportsbook homepage               # web.steps.Environment.userGoesToSportsbookHomepage()
+  And user logs in with &quot;correct credentials&quot;          # web.steps.LoginSteps.userLogsInWith(java.lang.String)
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [498662701005fe6d7996e97fe2c8af37, clickElement {id=8beeef06-c509-4865-9808-c5e06e88033b}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58810}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58810/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (498662701005fe6d7996e97fe2c8af37)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 498662701005fe6d7996e97fe2c8af37
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wager/Wager.feature:5)
+
+  When user places &quot;2&quot; bets for &quot;8&quot; dollars            # web.steps.WagerSteps.userPlacesBetsForDollars(java.lang.String,java.lang.String)
+  Then &quot;2&quot; bet should be placed                        # web.steps.WagerSteps.betShouldBePlaced(java.lang.String)
+</system-out>
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 54720
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 17, 2022 11:58:29 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Oct 17, 2022 11:58:29 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 106, so returning the closest version found: 104
+Oct 17, 2022 11:58:29 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 106 of 104
+</system-err>
+  </testcase>
+  <testcase classname="Deposit" name="Verify user is able to make a deposit with an existing bank" time="7.656">
+    <error message="element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8eae24966333b391185a15cec4301886, clickElement {id=3da77f8d-c485-4140-8a55-dc8be021abce}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58926}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58926/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (8eae24966333b391185a15cec4301886)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 8eae24966333b391185a15cec4301886" type="org.openqa.selenium.ElementClickInterceptedException">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8eae24966333b391185a15cec4301886, clickElement {id=3da77f8d-c485-4140-8a55-dc8be021abce}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58926}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58926/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (8eae24966333b391185a15cec4301886)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 8eae24966333b391185a15cec4301886
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wallet/Deposit.feature:5)
+</error>
+    <system-out>
+@Regression
+Scenario: Verify user is able to make a deposit with an existing bank # src/test/resources/wallet/Deposit.feature:8
+  Given user goes to sportsbook homepage                              # web.steps.Environment.userGoesToSportsbookHomepage()
+  And user logs in with &quot;correct credentials&quot;                         # web.steps.LoginSteps.userLogsInWith(java.lang.String)
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8eae24966333b391185a15cec4301886, clickElement {id=3da77f8d-c485-4140-8a55-dc8be021abce}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:58926}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58926/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (8eae24966333b391185a15cec4301886)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 8eae24966333b391185a15cec4301886
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wallet/Deposit.feature:5)
+
+  When user opens &quot;my account&quot; model                                  # web.steps.DepositSteps.userOpensModel(java.lang.String)
+  And navigates to &quot;deposit&quot; page                                     # web.steps.MyAccountNavSteps.navigatesToPage(java.lang.String)
+  And user places a &quot;13&quot; deposit amount with an existing bank         # web.steps.DepositSteps.userPlacesADepositAmountWithAnExistingBank(java.lang.String)
+  Then the sportsbook should deposit the amount                       # web.steps.DepositSteps.theSportsbookShouldDepositTheAmount()
+</system-out>
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 62771
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 17, 2022 11:58:39 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Oct 17, 2022 11:58:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 106, so returning the closest version found: 104
+Oct 17, 2022 11:58:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 106 of 104
+</system-err>
+  </testcase>
+  <testcase classname="Deposit" name="Verify user is able to make a deposit with a existing credit card" time="30.276">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[6]/div/div/div/div[3]/div/div[2]/div/div/div/div[1]/div[1]/div/div[2]/figure/div[1]&quot;}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df5801c4de1caa6c676cd45ef3374dd3, findElement {using=xpath, value=/html/body/div[6]/div/div/div/div[3]/div/div[2]/div/div/div/div[1]/div[1]/div/div[2]/figure/div[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59038}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59038/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: df5801c4de1caa6c676cd45ef3374dd3" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[6]/div/div/div/div[3]/div/div[2]/div/div/div/div[1]/div[1]/div/div[2]/figure/div[1]&quot;}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df5801c4de1caa6c676cd45ef3374dd3, findElement {using=xpath, value=/html/body/div[6]/div/div/div/div[3]/div/div[2]/div/div/div/div[1]/div[1]/div/div[2]/figure/div[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59038}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59038/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: df5801c4de1caa6c676cd45ef3374dd3
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy24.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:51)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:478)
+	at web.steps.DepositSteps.userPlacesADepositAmountWithAnExistingCreditCard(DepositSteps.java:74)
+	at ✽.user places a &quot;12&quot; deposit amount with an existing credit card(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wallet/Deposit.feature:18)
+</error>
+    <system-out>
+@Regression
+Scenario: Verify user is able to make a deposit with a existing credit card # src/test/resources/wallet/Deposit.feature:15
+  Given user goes to sportsbook homepage                                    # web.steps.Environment.userGoesToSportsbookHomepage()
+  And user logs in with &quot;correct credentials&quot;                               # web.steps.LoginSteps.userLogsInWith(java.lang.String)
+  When user opens &quot;my account&quot; model                                        # web.steps.DepositSteps.userOpensModel(java.lang.String)
+  And navigates to &quot;deposit&quot; page                                           # web.steps.MyAccountNavSteps.navigatesToPage(java.lang.String)
+  And user places a &quot;12&quot; deposit amount with an existing credit card        # web.steps.DepositSteps.userPlacesADepositAmountWithAnExistingCreditCard(java.lang.String)
+      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[6]/div/div/div/div[3]/div/div[2]/div/div/div/div[1]/div[1]/div/div[2]/figure/div[1]&quot;}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [df5801c4de1caa6c676cd45ef3374dd3, findElement {using=xpath, value=/html/body/div[6]/div/div/div/div[3]/div/div[2]/div/div/div/div[1]/div[1]/div/div[2]/figure/div[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59038}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59038/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: df5801c4de1caa6c676cd45ef3374dd3
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy24.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:51)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:478)
+	at web.steps.DepositSteps.userPlacesADepositAmountWithAnExistingCreditCard(DepositSteps.java:74)
+	at ✽.user places a &quot;12&quot; deposit amount with an existing credit card(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wallet/Deposit.feature:18)
+
+  Then the sportsbook should deposit the amount                             # web.steps.DepositSteps.theSportsbookShouldDepositTheAmount()
+</system-out>
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 49552
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 17, 2022 11:58:47 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Oct 17, 2022 11:58:47 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 106, so returning the closest version found: 104
+Oct 17, 2022 11:58:47 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 106 of 104
+</system-err>
+  </testcase>
+  <testcase classname="Deposit" name="Verify user is able to make a deposit with dollars and cents through an existing bank" time="8.023">
+    <error message="element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [355f776eef6c3fb8075da6b87cd64449, clickElement {id=3e16e576-3b6b-466b-953d-ac7c28cacace}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59215}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59215/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (355f776eef6c3fb8075da6b87cd64449)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 355f776eef6c3fb8075da6b87cd64449" type="org.openqa.selenium.ElementClickInterceptedException">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [355f776eef6c3fb8075da6b87cd64449, clickElement {id=3e16e576-3b6b-466b-953d-ac7c28cacace}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59215}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59215/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (355f776eef6c3fb8075da6b87cd64449)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 355f776eef6c3fb8075da6b87cd64449
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wallet/Deposit.feature:5)
+</error>
+    <system-out>
+@Regression
+Scenario: Verify user is able to make a deposit with dollars and cents through an existing bank # src/test/resources/wallet/Deposit.feature:22
+  Given user goes to sportsbook homepage                                                        # web.steps.Environment.userGoesToSportsbookHomepage()
+  And user logs in with &quot;correct credentials&quot;                                                   # web.steps.LoginSteps.userLogsInWith(java.lang.String)
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [355f776eef6c3fb8075da6b87cd64449, clickElement {id=3e16e576-3b6b-466b-953d-ac7c28cacace}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59215}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59215/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (355f776eef6c3fb8075da6b87cd64449)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 355f776eef6c3fb8075da6b87cd64449
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wallet/Deposit.feature:5)
+
+  When user opens &quot;my account&quot; model                                                            # web.steps.DepositSteps.userOpensModel(java.lang.String)
+  And navigates to &quot;deposit&quot; page                                                               # web.steps.MyAccountNavSteps.navigatesToPage(java.lang.String)
+  And user places a &quot;12.79&quot; deposit amount with an existing bank                                # web.steps.DepositSteps.userPlacesADepositAmountWithAnExistingBank(java.lang.String)
+  Then the sportsbook should deposit the amount                                                 # web.steps.DepositSteps.theSportsbookShouldDepositTheAmount()
+</system-out>
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 58423
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 17, 2022 11:59:17 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Oct 17, 2022 11:59:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 106, so returning the closest version found: 104
+Oct 17, 2022 11:59:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 106 of 104
+</system-err>
+  </testcase>
+  <testcase classname="Withdrawal" name="Verify user is able to make a withdraw with an existing bank" time="11.394">
+    <error message="element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2cb31da7b4e7bf0a04688c77412a8a12, clickElement {id=37f054ae-0bda-4c19-ba58-411aabf057fe}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59333}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59333/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (2cb31da7b4e7bf0a04688c77412a8a12)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 2cb31da7b4e7bf0a04688c77412a8a12" type="org.openqa.selenium.ElementClickInterceptedException">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2cb31da7b4e7bf0a04688c77412a8a12, clickElement {id=37f054ae-0bda-4c19-ba58-411aabf057fe}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59333}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59333/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (2cb31da7b4e7bf0a04688c77412a8a12)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 2cb31da7b4e7bf0a04688c77412a8a12
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wallet/Withdrawal.feature:5)
+</error>
+    <system-out>
+@Regression @Smoke
+Scenario: Verify user is able to make a withdraw with an existing bank # src/test/resources/wallet/Withdrawal.feature:8
+  Given user goes to sportsbook homepage                               # web.steps.Environment.userGoesToSportsbookHomepage()
+  And user logs in with &quot;correct credentials&quot;                          # web.steps.LoginSteps.userLogsInWith(java.lang.String)
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;UserDropDown:Fubo-clickContainer-1&quot;&gt;...&lt;/div&gt; is not clickable at point (1563, 68). Other element would receive the click: &lt;div class=&quot;loading-container&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;C02G59CSMD6M&apos;, ip: &apos;2600:1700:b250:87b0:3593:c764:c9d:5eb0%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6&apos;, java.version: &apos;11.0.16.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2cb31da7b4e7bf0a04688c77412a8a12, clickElement {id=37f054ae-0bda-4c19-ba58-411aabf057fe}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/h2/ys6hbp7n5gs...}, goog:chromeOptions: {debuggerAddress: localhost:59333}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:59333/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on MAC (2cb31da7b4e7bf0a04688c77412a8a12)] -&gt; xpath: //*[text()=&apos;Login&apos;]/parent::*]
+Session ID: 2cb31da7b4e7bf0a04688c77412a8a12
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at web.pages.home.HomePage.navigateToLoginPage(HomePage.java:59)
+	at web.steps.LoginSteps.userLogsInWith(LoginSteps.java:42)
+	at ✽.user logs in with &quot;correct credentials&quot;(file:///Users/dajveechols/AutomationDevelopment/web-sportsbook-automation/src/test/resources/wallet/Withdrawal.feature:5)
+
+  When user opens &quot;my account&quot; model                                   # web.steps.DepositSteps.userOpensModel(java.lang.String)
+  And navigates to &quot;withdraw&quot; page                                     # web.steps.MyAccountNavSteps.navigatesToPage(java.lang.String)
+  And user places a &quot;20&quot; withdraw amount with an existing bank         # web.steps.WithdrawSteps.user_places_a_withdraw_amount_with_an_existing_bank(java.lang.String)
+  Then the sportsbook should withdraw the amount                       # web.steps.WithdrawSteps.the_sportsbook_should_withdraw_the_amount()
+</system-out>
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 50478
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 17, 2022 11:59:25 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Oct 17, 2022 11:59:25 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 106, so returning the closest version found: 104
+Oct 17, 2022 11:59:25 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 106 of 104
+</system-err>
+  </testcase>
+  <testcase classname="Withdrawal" name="Verify user is able to make a withdraw with dollars and cents through an existing bank" time="30.262"/>
+</testsuite>
